@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
-import pickle
-import joblib
+
 from sklearn import preprocessing
 
 data = pd.read_csv('serv_rec.csv')
@@ -65,8 +64,7 @@ del dataset['Service Recommended']
 X = dataset
 
 model_columns = list(X.columns)
-joblib.dump(model_columns, 'serv_rec_model_columns.pkl')
-print("Models columns dumped!")
+
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, test_size=0.2, random_state = 123)
 
@@ -74,7 +72,6 @@ from sklearn.ensemble import RandomForestClassifier
 
 clf = RandomForestClassifier(n_estimators=100, max_depth=2, random_state=0)
 new=clf.fit(X,y)
-pickle.dump(new,open('serv_rec_model.pkl', 'wb'))
 
 
 # prediction = model.predict(X_test)
@@ -89,8 +86,6 @@ pickle.dump(new,open('serv_rec_model.pkl', 'wb'))
 # accuracy = 100 - np.mean(mape)
 # print("Accuracy:")
 # print(accuracy)
-
-# loaded_model = pickle.load(open('serv_model.pkl','rb'))
 
 
 # clf = RandomForestClassifier(n_estimators=100, max_depth=2, random_state=0)
