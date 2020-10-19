@@ -1,0 +1,12 @@
+Labels = 
+    {
+            "BI": "Battery Issue Services",
+            "CS": "Configuration Services",
+            "CD": "Contact Dell Support",
+            "HS": "Hardware Services",
+            "PS": "Premium Support Services",
+            "PSP": "Premium Support Plus Services",
+            "SS": "Security Services",
+            "SU": "Software Update Services",
+            "WS": "Warranty Services"
+    }
